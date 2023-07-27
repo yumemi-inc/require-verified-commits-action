@@ -1,0 +1,18 @@
+name: Require Verified Commits Action
+description: Requires pull request authors to sign commits with GPG or SSH key.
+author: YUMEMI Inc.
+branding:
+  icon: check
+  color: green
+runs:
+  using: node16
+  main: 'index.js'
+inputs:
+  token:
+    required: true
+    description: Authenticated GitHub token.
+    default: '${{ github.token }}'
+  pull-request-number:
+    required: true
+    description: Number of the pull request to check.
+    default: '${{ github.event.pull_request.number }}'

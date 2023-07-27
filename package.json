@@ -1,0 +1,26 @@
+{
+  "name": "@yumemi-inc/require-verified-commits-action",
+  "description": "Requires pull request authors to sign commits with GPG or SSH key.",
+  "author": "Natsuki Ikeguchi <n_ikeguchi@yumemi.co.jp>",
+  "license": "MIT",
+  "readme": "README.md",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.ts --bundle --platform=node --outfile=dist/index.js",
+    "check": "rome format . && rome check .",
+    "fix": "rome format --write . && rome check --apply-unsafe ."
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^5.1.1",
+    "@octokit/rest": "^20.0.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.39",
+    "esbuild": "^0.18.17",
+    "rome": "^12.1.3",
+    "typescript": "^5.1.6"
+  }
+}
